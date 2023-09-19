@@ -1,0 +1,4 @@
+/node_modules
+.idea/$CACHE_FILE$
+.idea/workspace.xml
+.idea/inspectionProfiles/Project_Default.xml
