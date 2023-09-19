@@ -28,7 +28,7 @@ const SimpleInput = (props) => {
   const formSubmissionHandler = e => {
     e.preventDefault();
 
-    if (!enteredNameIsValid) {
+    if (nameInputIsInvalid && emailInputIsInvalid) {
       return;
     }
 
@@ -38,11 +38,7 @@ const SimpleInput = (props) => {
     resetEmailInput();
   }
 
-  const nameInputClasses = nameInputIsInvalid
-    ? 'form-control invalid'
-    : 'form-control';
-
-  const emailInputClasses = emailInputIsInvalid
+  const nameInputClasses = !formIsValid
     ? 'form-control invalid'
     : 'form-control';
 
