@@ -23,7 +23,7 @@ const cartReducer = (state, action) => {
         + (action.meal.price * action.meal.amount);
       
       existingMeal.amount = action.meal.amount;
-      
+
       return { 
         currentCart: [...state.currentCart],
         totalAmount: updatedTotalAmount

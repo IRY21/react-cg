@@ -6,6 +6,7 @@ import CartContext from '../../../store/cart-context';
 
 import CartItem from '../CartItem/CartItem';
 import Modal from '../Modal/Modal';
+import MealCheckoutForm from "../../MealCheckoutForm/MealCheckoutForm";
 
 const Cart = () => {
   const cartCtx = useContext(CartContext);
@@ -17,11 +18,6 @@ const Cart = () => {
 
   const removeMealHandler = (meal) => {
     cartCtx.removeFromCart({...meal});
-  }
-
-  const orderHandler = () => {
-    console.log(JSON.stringify(cartCtx.currentCart));
-    console.log(cartCtx.totalAmount, 'Total Amount');
   }
 
   return (
@@ -43,24 +39,7 @@ const Cart = () => {
           );
         })}
       </ul>
-      <div className={classes.total}>
-        <span>Total Amount</span>
-        <span>{cartCtx.totalAmount.toFixed(2)}</span>
-      </div>
-      <div className={classes.actions}>
-        <button
-          className={classes['button--alt']}
-          onClick={cartCtx.closeCart}
-        >
-          Close
-        </button>
-        <button
-          className={classes.button}
-          onClick={orderHandler}
-        >
-          Order
-        </button>
-      </div>
+      <MealCheckoutForm />
     </Modal>
   );
 }

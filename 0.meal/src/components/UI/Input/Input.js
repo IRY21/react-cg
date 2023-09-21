@@ -5,7 +5,7 @@ import classes from './Input.module.css';
 const Input =  React.forwardRef((props, ref) => {
   return (
     <div
-      className={classes.input}
+      className={`${classes.input} ${props.input.view === 'wide' ? classes['input--wide'] : ''}`}
     >
       <label htmlFor={props.input.id}>
         {props.label}

@@ -17,3 +17,19 @@
   font: inherit;
   padding-left: 0.5rem;
 }
+
+.input--wide {
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  max-width: 200px;
+}
+
+.input--wide label {
+  margin-right: 0;
+  margin-bottom: 4px;
+}
+
+.input--wide input {
+  width: 100%;
+}
